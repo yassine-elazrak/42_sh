@@ -6,7 +6,7 @@
 /*   By: sid-bell <sid-bell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/22 12:33:03 by sid-bell          #+#    #+#             */
-/*   Updated: 2019/12/22 12:33:13 by sid-bell         ###   ########.fr       */
+/*   Updated: 2019/12/26 00:26:06 by sid-bell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	ft_execbg(t_job *job)
 	pid_t		pid;
 	t_job		*jb;
 
+	signal(SIGCHLD, SIG_DFL);
 	if (!(pid = fork()))
 	{
 		ft_resetsignals();
@@ -72,4 +73,5 @@ void	ft_execbg(t_job *job)
 	ft_printf("[%d] %d\n", jb->id, jb->pgid);
 	jb->command = ft_strdup(job->command);
 	ft_addjob(jb, ft_getset(0));
+	signal(SIGCHLD, ft_sigchld);
 }

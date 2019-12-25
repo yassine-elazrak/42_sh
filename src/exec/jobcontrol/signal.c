@@ -6,7 +6,7 @@
 /*   By: sid-bell <sid-bell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/08 23:03:34 by sid-bell          #+#    #+#             */
-/*   Updated: 2019/12/24 09:19:23 by sid-bell         ###   ########.fr       */
+/*   Updated: 2019/12/26 00:35:07 by sid-bell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	ft_check_jobs_status(t_job *current)
 
 	container = ft_getset(NULL);
 	if (current)
-		return (ft_check_job(current, current, container));
+		ft_check_job(current, current, container);
 	list = container->list;
 	while (list)
 	{
