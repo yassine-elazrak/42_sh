@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_line_.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yelazrak <yelazrak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sid-bell <sid-bell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/23 04:41:44 by oherba            #+#    #+#             */
-/*   Updated: 2019/12/24 15:37:02 by yelazrak         ###   ########.fr       */
+/*   Updated: 2019/12/26 00:15:27 by sid-bell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,10 @@ void			ft_init_readline(t_init *init)
 	signal(SIGINT, ft_catch_sig);
 	signal(SIGWINCH, ft_catch_sig_window);
 	if (!(name = getenv("TERM")))
+	{
+		ft_printf_fd(2, "%s\n", "TERM variable not set");
 		exit(1);
+	}
 	if (!(tgetent(NULL, name)))
 		exit(1);
 	ft_memset((void *)init, '\0', sizeof(t_init));
