@@ -6,7 +6,7 @@
 /*   By: sid-bell <sid-bell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/17 18:25:59 by sid-bell          #+#    #+#             */
-/*   Updated: 2019/12/20 14:57:03 by sid-bell         ###   ########.fr       */
+/*   Updated: 2019/12/26 01:46:22 by sid-bell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ t_job		*ft_cpyjob(t_job *job)
 	new->killed = job->killed;
 	new->id = job->id;
 	new->pgid = job->pgid;
-	new->notified = job->notified;
+	new->notified = 1;
 	new->next = NULL;
 	new->return_val = job->return_val;
 	new->suspended = job->suspended;

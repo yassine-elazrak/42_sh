@@ -6,7 +6,7 @@
 /*   By: sid-bell <sid-bell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 17:04:30 by sid-bell          #+#    #+#             */
-/*   Updated: 2019/12/24 19:37:33 by sid-bell         ###   ########.fr       */
+/*   Updated: 2019/12/26 01:42:41 by sid-bell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int		exec(t_job *job)
 	{
 		p.pipe_stdin = -1;
 		p.job = job;
+		job->notified = 1;
 		ft_init_job(job);
 		if (job->flag == BG && ft_run_in_sub(job->processes))
 			ft_execbg(job);
