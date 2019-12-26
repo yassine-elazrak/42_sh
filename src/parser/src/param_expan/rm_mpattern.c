@@ -6,11 +6,20 @@
 /*   By: mmostafa <mmostafa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 18:59:34 by mmostafa          #+#    #+#             */
-/*   Updated: 2019/12/25 15:00:15 by mmostafa         ###   ########.fr       */
+/*   Updated: 2019/12/26 01:57:51 by mmostafa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shell.h"
+
+void	aff_err(t_param_expan_st *p_w)
+{
+	ft_printf_fd(2, "42sh: %s: ", p_w->param);
+	if (!p_w->word || !ft_strlen(p_w->word))
+		ft_putendl_fd("parameter null or not set", 2);
+	else
+		ft_putendl_fd(p_w->word, 2);
+}
 
 char	*delet_adds_stars(char *str, char c)
 {

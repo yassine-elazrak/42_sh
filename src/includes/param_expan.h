@@ -6,7 +6,7 @@
 /*   By: sid-bell <sid-bell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 21:15:28 by mmostafa          #+#    #+#             */
-/*   Updated: 2019/12/24 19:32:15 by sid-bell         ###   ########.fr       */
+/*   Updated: 2019/12/26 01:56:59 by mmostafa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct	s_mtools
 	char	*suffix;
 }				t_mtools;
 
+void			aff_err(t_param_expan_st *p_w);
 char			*delet_adds_stars(char *str, char c);
 char			*rm_suffix(t_param_expan_st *p_w);
 char			*rm_preffix(t_param_expan_st *p_w);
